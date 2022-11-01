@@ -1,0 +1,9 @@
+load('labels/landmark_labels.mat')
+trainingData = objectDetectorTrainingData(gTruth,'SamplingFactor',1,'WriteLocation','TrainingData');
+
+[imds,blds] = objectDetectorTrainingData(gTruth);
+cds = combine(imds,blds);
+
+
+
+test_imds = imageDatastore('images/testing/');
